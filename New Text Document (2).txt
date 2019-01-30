@@ -1,0 +1,55 @@
+Difference between == and .equals() method in Java
+In general both equals() and “==” operator in Java are used to compare objects to check equality but here are some of the differences between the two:
+
+Main difference between .equals() method and == operator is that one is method and other is operator.
+We can use == operators for reference comparison (address comparison) and .equals() method for content comparison. In simple words, == checks if both objects point to the same memory location whereas .equals() evaluates to the comparison of values in the objects.
+If a class does not override the equals method, then by default it uses equals(Object o) method of the closest parent class that has overridden this method. See this for detail
+Coding Example:
+
+// Java program to understand  
+// the concept of == operator 
+public class Test { 
+    public static void main(String[] args) 
+    { 
+        String s1 = new String("HELLO"); 
+        String s2 = new String("HELLO"); 
+        System.out.println(s1 == s2); 
+        System.out.println(s1.equals(s2)); 
+    } 
+} 
+Output:
+
+false
+true
+Explanation: Here we are creating two objects namely s1 and s2.
+
+Both s1 and s2 refers to different objects.
+When we use == operator for s1 and s2 comparison then the result is false as both have different addresses in memory.
+Using equals, the result is true because its only comparing the values given in s1 and s2.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Java is platform-independent language. To achieve the platform independency, the designers put two phases between source code to output – compilation stage and 
+
+interpretation stage introducing a new concept called bytecode.
+
+1. Compilation stage
+
+Here compiler do the job. The source code is converted to bytecode by the compiler. Bytecode is a new concept introduced by Java designers not existing in C/C++. 
+The bytecode looks very different consisting of some square boxes, unknown and unreadable characters and some scattered English characters. 
+Following figure illustrates.
+
+compiled and interpreted
+
+Converting Java source code to bytecode is in known as compilation. The bytecode is not in a readable format by the Microprocessor 
+(as Microprocessor knows only one language – binary language).
+
+1. Interpretation stage (Execution stage)
+
+Here, Java interpreter comes into picture. Java interpreter converts the bytecode into processor readable binary code. 
+The binary code is executed by the Microprocessor and given output. Onething is to be noticed here. Different OS will have different architectures. 
+The Java interpreter converts the bytecode in the binary code understood by that OS. That is, the same bytecode, if executed on Windows gives binary code understood
+ by Windows OS and if executed on UNIX gets binary code understood by the UNIX architecture. That is, interpreters are very different. 
+The Java interpreter working on Windows is different from UNIX interpreter. You must load a OS compatible Java interpreter. Interpreter is a part of JDK. 
+So, JDK’s are different for different OS. The interpreter is known as JVM (Java Virtual Machine).
+
+Now, I think you are sure of why Java is called both compiled and interpreted language.
